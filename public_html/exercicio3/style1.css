@@ -1,0 +1,124 @@
+html{
+	background-color: #ddddff;
+	border:0;
+	padding:0;
+	margin:0;
+}
+
+
+
+body{
+	width: 40em;
+	padding: 0;
+	border: 0;
+	display: block;
+	margin: 0 auto 0 auto;
+	font-family: serif;
+	background-color: white;
+}
+
+/*Header*/
+
+#header{
+	padding: 25px 0 25px 15px;
+	background-color: gray;
+	color:white;
+	font-family: sans-serif;
+}
+
+h1{
+	margin:0 0 25px 0;
+}
+
+h2{
+	margin:25px 0 0 0;
+}
+
+/*Aspeto do menu */
+
+#menu{
+	padding:12px 0 12px 0;
+	background-color: #400000;
+}
+
+/*retira as cenas dos links */
+#menu ul li{
+	display: inline;
+}
+
+/*trabalha as borders*/
+#menu ul li+li{
+	display: inline;
+	border-left-style:solid;
+	border-left-color:white;
+}
+
+#menu a{	
+	padding: 0 5px 0 10px;
+	list-style: none;
+	text-decoration:none;
+	color: white;
+}
+
+ul{
+	padding: 0 0 0 6px;
+	margin:0;
+}
+
+/*Aspeto do content*/
+
+#content{
+	padding-left:0.5rem;
+}
+
+#content .news-item {
+	border-bottom-style:solid; 
+	padding: 10px;
+	border-width: 1px;
+}
+
+.news-item h3{
+	margin:0;
+	padding:1rem 0 1rem 0;
+	font-family: sans-serif;
+	font-weight:bold;
+	font-size: 2.25rem;
+}
+.news-item img{
+	margin: 0 0.5rem 0 0;
+	float:left;
+}
+
+.news-item .introduction {
+	margin-top: 8px;
+	font-style: italic;
+}
+.news-item ul li{
+	display: inline;
+}
+
+.news-item a{
+	list-style: none;
+	text-decoration:none;
+	
+}
+
+#content .news-item li a{
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-left: 6px;
+	padding-bottom: 4px;
+	margin: 0px;
+	color: white;
+	background-color: #303030 ;
+}
+
+#content .news-item ul{
+	margin: 0;
+	padding:0;
+}
+
+#footer p {
+	font-style:bold;
+	margin-bottom:0;
+}

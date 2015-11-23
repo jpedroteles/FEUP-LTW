@@ -1,0 +1,131 @@
+html{
+	border-bottom:0;
+	border-top:0;
+	border-right:0;
+	border-left:10px solid transparent;
+	border-image: url("stripe.png") 20% round;
+}
+
+
+
+body{
+	width: 40em;
+	padding: 0;
+	display: block;
+	margin: 0 auto 0 auto;
+	font-family: serif;
+	background-color: white;
+	
+	
+}
+
+#body{
+	background-image: url("stripe.png");
+}
+
+#round { 
+  border: 15px solid transparent;
+  padding: 10px 20px;
+  border-image:url("/files/4127/stripe.png") 30 30 round;
+}
+/*Header*/
+
+#header{
+	padding: 15px 0 15px 15px;
+	background-color: black;
+	color:white;
+	font-family: sans-serif;
+}
+
+h1{
+	margin:0 0 10px 0;
+}
+
+h2{
+	margin:10px 0 0 0;
+}
+
+/*Aspeto do menu */
+
+#menu{
+	padding:12px 0 12px 0;
+	background-color: #303030;
+}
+
+/*retira as cenas dos links */
+#menu ul li{
+	margin: 0 2.5px 0 2.5px;
+	display: inline;
+	background-color: white;
+}
+
+
+#menu a{	
+	padding: 0 10px 0 10px;
+	list-style: none;
+	text-decoration:none;
+	color: black;
+}
+
+ul{
+	padding: 0 0 0 6px;
+	margin:0;
+}
+
+/*Aspeto do content*/
+
+#content{
+	padding-left:0.5rem;
+}
+
+#content .news-item {
+	border-bottom-style:solid; 
+	padding: 10px;
+	border-width: 1px;
+}
+
+.news-item h3{
+	margin:0;
+	padding:1rem 0 1rem 0;
+	font-family: sans-serif;
+	font-weight:bold;
+	font-size: 2.25rem;
+}
+.news-item img{
+	margin: 0 0.5rem 0 0;
+	float:left;
+}
+
+.news-item .introduction {
+	margin-top: 8px;
+	font-style: italic;
+}
+.news-item ul li{
+	display: inline;
+}
+
+.news-item a{
+	list-style: none;
+	text-decoration:none;
+	
+}
+
+#content .news-item li a{
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-left: 6px;
+	padding-bottom: 4px;
+	margin: 0px;
+	color: white;
+	background-color: #303030 ;
+}
+
+#content .news-item ul{
+	margin: 0;
+	padding:0;
+}
+
+#footer p {
+	font-style:bold;
+	margin-bottom:0;
+}
