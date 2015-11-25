@@ -47,3 +47,17 @@ create table Guests(
 	event INT REFERENCES Event(id)
 );
 
+/* Optional tables */
+
+create table Forum(
+	id INT NOT NULL PRIMARY KEY,
+	name TEXT NOT NULL
+);
+
+create table coment(
+	id INT NOT NULL PRIMARY KEY,
+ 	comentDate DATE NOT NULL,
+ 	coment TEXT NOT NULL,
+ 	user INT REFERENCES User(id),
+ 	forum INT REFERENCES Forum(id)
+);
