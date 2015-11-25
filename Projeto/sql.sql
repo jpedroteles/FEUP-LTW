@@ -17,6 +17,7 @@ create table User(
 	name TEXT NOT NULL,
 	mail TEXT NOT NULL,
 	mailValidation BOOLEAN NOT NULL,
+	password TEXT NOT NULL
 	);
 
 create table Event(
@@ -32,7 +33,7 @@ create table Event(
 );
 
 create table Type(
-	id INT NOT NULL PRIMARE KEY,
+	id INT NOT NULL PRIMARY KEY,
 	name TEXT NOT NULL
 );
 
