@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION['loginerror']))
+{
+	$_SESSION['loginerror'] = 0;
+
+}
 ?>
 
 
@@ -16,8 +21,8 @@ session_start();
   		<div class="login">
    			<h1>Login</h1>
     		<form method="post" action="checklogin.php">
-      			  <p><input id="myusername" type="text" name="login" placeholder="Username"></p>
-     			  <p><input id="mypassword" type="password" name="password" placeholder="Password"></p>
+      			  <p><input type="text" name="myusername" placeholder="Username"></p>
+     			  <p><input type="password" name="mypassword" placeholder="Password"></p>
 			  <? 
 			    if($_SESSION['loginerror'] == 1){ 
 				echo 'Wrong username or password';
