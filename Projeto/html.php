@@ -7,7 +7,7 @@ if(!isset($_SESSION['loginerror']))
 }
 ?>
 
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Event Manager</title>
@@ -29,7 +29,7 @@ if(!isset($_SESSION['loginerror']))
 			    	$_SESSION['loginerror'] = 0;
 			    }	
 			  ?>
-                          <p class="remember_me">
+                    <p class="remember_me">
        				<label>
          			<label>
          			<input type="checkbox" name="remember_me" id="remember_me">
@@ -45,6 +45,7 @@ if(!isset($_SESSION['loginerror']))
     	<p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
   	</div>
 	</div>
+
 	<div id="footer">
 		<p>Projecto Final @ FEUP - 2015</p>
 	</div>
