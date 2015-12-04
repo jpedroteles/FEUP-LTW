@@ -18,10 +18,10 @@ if(!isset($_SESSION['fillBlanks'])){
 				<p><input type="text" name="username" placeholder="Username"></p>
 				<p><input type="password" name="password1" placeholder="Password"></p>
 				<p><input type="password" name="password2" placeholder="Confirm Password"></p>
-				<p><input type="text" name="mail" placeholder="Email address"></p>
+				<p><input type="email" name="mail" placeholder="Email address"></p>
 				<?
 			    if($_SESSION['fillBlanks'] == 1){
-				echo 'Fill all the blanks';
+					echo 'Fill all the blanks';
 			    	$_SESSION['fillBlanks'] = 0;
 			    }
 			  ?>

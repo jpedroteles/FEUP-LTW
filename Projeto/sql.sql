@@ -23,7 +23,8 @@ create table User(
 create table Event(
 	id INT NOT NULL PRIMARY KEY,
 	name TEXT NOT NULL,
-	startDate DATE NOT NULL,
+	startDate DATE NOT NULL, /*falta criar o time */
+	startTime TIME NOT NULL,
 	local TEXT NOT NULL,
 	decription TEXT NOT NULL,
 	private BOOLEAN NOT NULL,
