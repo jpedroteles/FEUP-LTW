@@ -1,4 +1,6 @@
 <?php
+$db = new PDO('sqlite:sql.db');
+
 $show_month = $_POST['showmonth'];
 $show_year = $_POST['showyear'];
 $show_day = $_POST['showday'];
@@ -38,6 +40,16 @@ echo '<div id = "calendar_wrap">';
 
   /*Current Month */
   for($i = 1; $i <= $day_count; $i++) {
+    //get events Logic
+    $date = $showyear.'-'.$showmonth.'-'.$i;
+    $query = $db->query('SELECT id FROM Event WHERE startDate = "'.$date.'"');
+    $num_rows = $db->query('SELECT Count(*) as numRows FROM Event WHERE startDate = "'.$date.'"');
+    $data = $num_rows->fetch(PDO::FETCH_ASSOC);
+
+    if($data[numRows] > 0) {
+      $event = "<input name='$date' type='submit' value='Details' id='$date' onClick='javascript:show_details(this);'>";
+    }
+
     if($i==$show_day)
     {
       echo '<div class = "present_day"</div>';
@@ -46,10 +58,13 @@ echo '<div id = "calendar_wrap">';
       echo '<div class = "cal_day">';
 
     echo '<div class = "day_heading" a href="page.html">';
-    echo '<a href="#" onclick="">'.$i.'</a>';
-    /*echo $i;
-    echo '</a>';*/
+    echo $i;
     echo '</div>';
+
+    //show events button
+    if($data[numRows] > 0) {
+      echo "<div class = 'openings'><br />".$event."</div>";
+    }
     echo '</div>';
   }
 

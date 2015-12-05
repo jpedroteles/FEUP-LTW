@@ -26,7 +26,7 @@ create table Event(
 	startDate DATE NOT NULL, /*falta criar o time */
 	startTime TIME NOT NULL,
 	local TEXT NOT NULL,
-	decription TEXT NOT NULL,
+	description TEXT NOT NULL,
 	private BOOLEAN NOT NULL,
 	photo BLOB, /*used on media files ver alternativas*/
 	type INT REFERENCES Tipo(id),

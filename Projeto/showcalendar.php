@@ -75,9 +75,40 @@
     document.getElementById("showCalendar").innerHTML = "processing...";
   }
   </script>
+  <script type="text/javascript">
+  function overlay() {
+    var el = document.getElementById("overlay");
+    el.style.display = (el.style.display == "block") ? "none" : "block";
+    var el = document.getElementById("events");
+    el.style.display = (el.style.display == "block") ? "none" : "block";
+    var el = document.getElementById("eventsBody");
+    el.style.display = (el.style.display == "block") ? "none" : "block";
+  }
+  </script>
+  <script language="JavaScript" type="text/javascript">
+    function show_details(theId)
+    {
+      var deets = (theId.id);
+      var el = document.getElementById("overlay");
+      el.style.display = (el.style.display == "block") ? "none" : "block";
+      var el = document.getElementById("events");
+      el.style.display = (el.style.display == "block") ? "none" : "block";
+      var hr = new XMLHttpRequest();
+      var url = "showcalendarevent.php";
+      var vars = "deets=" + deets;
+      hr.open("POST", url, true);
+      hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+          var return_data = hr.responseText;
+          document.getElementById('events').innerHTML = return_data;
+        }
+      }
+      hr.send(vars);
+      document.getElementById('events').innerHTML = "processing...";
+    }
+  </script>
 </head>
-<body onLoad="initialCalendar();">
-
   <header>
     <h1>Event Manager</h1>
   </header>
@@ -97,10 +128,10 @@
       </li>
     </ul>
   </nav>
-
+  <body onLoad="initialCalendar();">
   <div id="showCalendar"></div>
   <div id="overlay">
-    <div id="eventsform"></div>
+    <div id="events"></div>
   </div>
 </body>
 </html>
