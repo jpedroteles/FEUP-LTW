@@ -1,4 +1,10 @@
 <?php
+/*
+Neste ficheiro falta:
+		-verificar se o mail inserido já existe na base de dados (de forma a depois podermos recuperar a pass pelo mail)
+		-alterar o email que se envia(por exemplo com a nome do user e a pass)
+		-alterar a mensagem de 'Passwords don\t match' de forma a aparecer como o erro do login
+*/
 
 $db = new PDO('sqlite:sql.db');
 
@@ -26,8 +32,17 @@ if($mypassword1 == $mypassword2)
 	$sql = "INSERT INTO User (id,name,mail,mailValidation,password)
 	VALUES('$id','$myusername','$mymail','FALSE','$mypassword1')";
 
-	if($db->query($sql) == TRUE)
+	if($db->query($sql) == TRUE){
 		echo 'New account created successfully';
+		//envio de email
+		$to = $mymail;
+		$subject = "Novo registo";
+		$message = "Parabens por se ter registado no Event Manager";
+		$headers .= 'From: <naoresponder@eventmanager.com>' . "\r\n";
+		mail($to,$subject,$message,$headers);
+		//redirecionamento
+		header( "refresh:2; url=html.php" );							//delay de redirecionamento e pagina para ser redirecionado
+	}
 	else
 		echo 'Error creating account';
 }
