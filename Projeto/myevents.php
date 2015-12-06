@@ -19,7 +19,7 @@ $myevents = $stmt->fetchAll();
 <html>
 <title>Event Manager</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href=""></script>
+<link rel="stylesheet" href="event.css"></script>
 <script language="javascript" type="text/javascript">
 function editevent(eventid) {
   var hr = new XMLHttpRequest();
@@ -39,9 +39,9 @@ function editevent(eventid) {
 </script>
 <body>
   <did id = "myevents">
-    My Events
+    <h2>My Events</h2>
     <?  foreach( $myevents as $row) {?>
-          <div>
+          <div class="eventos">
             <a  href=# onclick="javascript:editevent(<?php echo $row['id'] ?>);">
             <h3><?=$row['name']?></h3>
             </a>

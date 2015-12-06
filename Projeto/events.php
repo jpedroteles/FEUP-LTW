@@ -18,17 +18,16 @@
 <html>
 <title>Event Manager</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="event.css">
 <body>
-  <div id = events>
-    All Events
+  <div id = "events">
+    <h2>All Events</h2>
     <?  foreach( $allevents as $row) {?>
-          <div>
+          <div class="eventos">
             <a  href=# onclick="javascript:registerinevent(<?php echo $row['id'] ?>);">
             <h3><?=$row['name']?></h3>
             </a>
-            <p><?=$row['startDate']?> .. <?=$row['startTime']?></p>
-            <p><?=$row['local']?></p>
+            <p><?=$row['startDate']?></p>
           </div>
     <? } ?>
   </div>

@@ -14,7 +14,7 @@ if(sizeof($_SESSION['user']) > 0) {
     echo '<div class = "eventdate">' . $row[startDate] . '</div>';
     echo '<div class = "eventtime">' . $row[startTime] . '</div>';
     echo '<div class = "eventdescription">' . $row[description] . '</div>';
-    echo '<img class = "evetphoto" src="uploads/' .$row[photo]. '>';
+    echo '<img class = "evetphoto" src="uploads/' .$row[photo].'>';
     echo '<div class = "attendevent"><input name="attendevent" type="submit" value="Attend Event" onclick="javascript:attendevent('.$row[id].');"></div>';
   echo '</div>';
 
