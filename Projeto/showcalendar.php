@@ -116,25 +116,9 @@
   </script>
 </head>
   <header>
-    <h1>Event Manager</h1>
+    <button onMouseDown="initialCalendar()">Open Calendar</button>
   </header>
-  <nav>
-    <ul>
-      <li><a href="main.php">Home</a></li>
-      <li><a href="showcalendar.php">Calendar</a></li>
-      <li>
-        <a href="events.php">Events<span class="caret"></span></a>
-        <div>
-          <ul>
-            <li><a href="events.php#my">My events</a></li>
-            <li><a href="events.php#registered">Events I'm in</a></li>
-            <li><a href="createevent.php">Create an event</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <body onLoad="initialCalendar();">
+  <body>
   <div id="showCalendar"></div>
   <div id="overlay">
     <div id="events"></div>

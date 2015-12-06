@@ -6,8 +6,7 @@ body {
 
 .container {
   margin: 80px auto;
-  width: 640px;
-  background:#CCC;
+  width: 350px;
 }
 
 .login {
@@ -15,7 +14,7 @@ body {
   margin: 0 auto;
   padding: 20px 20px 20px;
   width: 310px;
-  background: white;
+  background: #f3f3f3;
   border-radius: 3px;
   -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -34,12 +33,12 @@ body {
 .login h1 {
   margin: -20px -20px 21px;
   line-height: 40px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   color: #555;
   text-align: center;
   text-shadow: 0 1px white;
-  background: #f3f3f3;
+  background: #e3e3e3;
   border-bottom: 1px solid #cfcfcf;
   border-radius: 3px 3px 0 0;
   background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
@@ -48,6 +47,16 @@ body {
   background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
   -webkit-box-shadow: 0 1px whitesmoke;
   box-shadow: 0 1px whitesmoke;
+}
+
+.login h2 {
+  margin: -20px 0px 0px 0px;
+  line-height: 40px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #777;
+  text-align: center;
+  text-shadow: 0 1px white;
 }
 .login p {
   margin: 20px 0 0;
@@ -77,18 +86,18 @@ body {
   text-align: right;
 }
 
-.login-help {
+.login-help, .register-option {
   margin: 20px 0;
   font-size: 11px;
   color: white;
   text-align: center;
   text-shadow: 0 1px #2a85a1;
 }
-.login-help a {
+.login-help a, .register-option a {
   color: #cce7fa;
   text-decoration: none;
 }
-.login-help a:hover {
+.login-help a:hover, .register-option a:hover {
   text-decoration: underline;
 }
 
@@ -159,4 +168,10 @@ input[type=submit]:active {
 
 .lt-ie9 input[type=text], .lt-ie9 input[type=password] {
   line-height: 34px;
+}
+
+footer {
+  margin: 200px 0px 0px 0px;
+  color: white;
+  text-align: center;
 }

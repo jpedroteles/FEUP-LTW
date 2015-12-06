@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
                 url: link,
            })
            .done(function(html) {
-                 $("#events").empty().append(html);
+                 $("#mainwindow").empty().append(html);
            })
            .fail(function() {
                 console.log("error");
@@ -16,3 +16,37 @@ jQuery(document).ready(function($) {
            return false;
       });
  });
+
+ function attendevent(eventid)
+ {
+   var hr = new XMLHttpRequest();
+   var url = "attendevent.php";
+   var vars = "eventid="+eventid;
+   hr.open("POST", url, true);
+   hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   hr.onreadystatechange = function() {
+     if(hr.readyState == 4 && hr.status == 200) {
+       var return_data = hr.responseText;
+       document.getElementById("eventinformation").innerHTML = return_data;
+     }
+   }
+   hr.send(vars);
+   document.getElementById("eventinformation").innerHTML = "processing...";
+ }
+
+ function registerinevent(eventid)
+ {
+   var hr = new XMLHttpRequest();
+   var url = "registerinevent.php";
+   var vars = "eventid="+eventid;
+   hr.open("POST", url, true);
+   hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   hr.onreadystatechange = function() {
+     if(hr.readyState == 4 && hr.status == 200) {
+       var return_data = hr.responseText;
+       document.getElementById("events").innerHTML = return_data;
+     }
+   }
+   hr.send(vars);
+   document.getElementById("events").innerHTML = "processing...";
+ }

@@ -12,43 +12,8 @@
 		<title>Event Manager</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="">
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
-		<script language="javascript" type="text/javascript">
-		function registerinevent(eventid)
-		{
-			var hr = new XMLHttpRequest();
-	    var url = "registerinevent.php";
-	    var vars = "eventid="+eventid;
-	    hr.open("POST", url, true);
-	    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	    hr.onreadystatechange = function() {
-	      if(hr.readyState == 4 && hr.status == 200) {
-	        var return_data = hr.responseText;
-	        document.getElementById("events").innerHTML = return_data;
-	      }
-	    }
-	    hr.send(vars);
-	    document.getElementById("events").innerHTML = "processing...";
-	  }
-		</script>
-		<script language="javascript" type="text/javascript">
-		function attendevent(eventid)
-		{
-		  var hr = new XMLHttpRequest();
-		  var url = "attendevent.php";
-		  var vars = "eventid="+eventid;
-		  hr.open("POST", url, true);
-		  hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		  hr.onreadystatechange = function() {
-		    if(hr.readyState == 4 && hr.status == 200) {
-		      var return_data = hr.responseText;
-		      document.getElementById("eventinformation").innerHTML = return_data;
-		    }
-		  }
-		  hr.send(vars);
-		  document.getElementById("eventinformation").innerHTML = "processing...";
-		}
-		</script>
 	</head>
 	<body>
 		<header>
@@ -56,8 +21,8 @@
 		</header>
 		<nav>
 			<ul>
-        		<li><a href="main.php">Home</a></li>
-        		<li><a href="showcalendar.php">Calendar</a></li>
+        		<li><a href="home.php">Home</a></li>
+        		<li><a href="showcalendar.php" onclick="initialCalendar();">Calendar</a></li>
         		<li>
       				<a href="events.php">Events<span class="caret"></span></a>
             		<div>
@@ -70,19 +35,10 @@
         		</li>
     		</ul>
 		</nav>
-		<div id = events>
-			Últimos eventos
-			<?  foreach( $result as $row) {?>
-      			<div>
-							<a  href=# onclick="javascript:registerinevent(<?php echo $row['id'] ?>);">
-        			<h3><?=$row['name']?></h3>
-							</a>
-        			<p><?=$row['startDate']?> .. <?=$row['startTime']?></p>
-        			<p><?=$row['local']?></p>
-      			</div>
-			<? } ?>
-		</div>
 
+		<div id ="mainwindow">
+
+		</div>
 
 		<footer>
 			<p>Projecto Final @ FEUP - 2015</p>
