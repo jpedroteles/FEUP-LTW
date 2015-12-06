@@ -22,7 +22,7 @@
 		<nav>
 			<ul>
         		<li><a href="home.php">Home</a></li>
-        		<li><a href="showcalendar.php" onclick="initialCalendar();">Calendar</a></li>
+        		<li><a href="showcalendar.php">Calendar</a></li>
         		<li>
       				<a href="events.php">Events<span class="caret"></span></a>
             		<div>

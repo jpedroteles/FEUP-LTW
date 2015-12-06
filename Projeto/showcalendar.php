@@ -114,9 +114,18 @@
       document.getElementById('events').innerHTML = "processing...";
     }
   </script>
+  <script type="text/javascript">
+      function doSomething() {
+          console.log("Clicked!");
+      }
+      $("#button").trigger('click');
+
+    </script>
 </head>
   <header>
-    <button onMouseDown="initialCalendar()">Open Calendar</button>
+    <div id="divCheckbox" style="display: none;">
+      <button id="button" onClick="initialCalendar()">Open Calendar</button>
+    </div>
   </header>
   <body>
   <div id="showCalendar"></div>
