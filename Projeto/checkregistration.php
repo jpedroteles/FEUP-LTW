@@ -22,15 +22,25 @@ if("" == trim($_POST['username']) || "" == trim($_POST['password1']) || "" == tr
 	die(header("location:register.php"));
 }
 
+$sql = "SELECT * FROM User WHERE name='$myusername'";
+$result = $db->query($sql);
+if($result->fetch(PDO::FETCH_NUM > 0))
+{
+	session_start();
+	$_SESSION['invaliduser'] = 1;
+	die(header("location:register.php"));
+}
+
 if($mypassword1 == $mypassword2)
 {
 	$sql2 = "SELECT Count(*) as total FROM User";
 	$result = $db->query($sql2);
 	$data = $result->fetch(PDO::FETCH_ASSOC);
 	$id = $data['total'] + 1;
-	
+	$hash = crypt("123");
+
 	$sql = "INSERT INTO User (id,name,mail,mailValidation,password)
-	VALUES('$id','$myusername','$mymail','FALSE','$mypassword1')";
+	VALUES('$id','$myusername','$mymail','FALSE','$hash')";
 
 	if($db->query($sql) == TRUE){
 		echo 'New account created successfully';

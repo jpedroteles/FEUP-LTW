@@ -26,7 +26,14 @@ if(!isset($_SESSION['fillBlanks'])){
 					    if($_SESSION['fillBlanks'] == 1){
 							echo '<p class="error">Fill all the blanks</p>';
 					    	$_SESSION['fillBlanks'] = 0;
+								$_SESSION['fillBlanks'] = 0;
 					    }
+							else {
+								if($_SESSION['invaliduser'] == 1){
+								echo '<p class="error">Username already taken</p>';
+						    	$_SESSION['fillBlanks'] = 0;
+						    }
+							}
 				  	?>
 					<p class="submit"><input type="submit" value="Register"></p>
 				</form>
