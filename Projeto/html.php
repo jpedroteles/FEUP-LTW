@@ -1,4 +1,10 @@
 <?php
+/*
+Nesta pagina ainda falta:
+		- Meter o forgot passord a funcionar
+*/
+
+
 session_start();
 if(!isset($_SESSION['loginerror']))
 {
@@ -6,7 +12,6 @@ if(!isset($_SESSION['loginerror']))
 
 }
 ?>
-
 
 <html>
 	<head>
@@ -24,7 +29,7 @@ if(!isset($_SESSION['loginerror']))
 	     			 <p><input type="password" name="mypassword" placeholder="Password"></p>
 				  	<? 
 				    	if($_SESSION['loginerror'] == 1){ 
-							echo 'Wrong username or password';
+							echo '<p class="error">Wrong username or password</p>';
 				    		$_SESSION['loginerror'] = 0;
 				    	}	
 				  	?>

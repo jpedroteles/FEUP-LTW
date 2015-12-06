@@ -9,7 +9,7 @@ body {
   width: 350px;
 }
 
-.login {
+.register {
   position: relative;
   margin: 0 auto;
   padding: 20px 20px 20px;
@@ -19,7 +19,7 @@ body {
   -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-.login:before {
+.register:before {
   content: '';
   position: absolute;
   top: -8px;
@@ -30,7 +30,7 @@ body {
   background: rgba(0, 0, 0, 0.08);
   border-radius: 4px;
 }
-.login h1 {
+.register h1 {
   margin: -20px -20px 21px;
   line-height: 40px;
   font-size: 16px;
@@ -49,7 +49,7 @@ body {
   box-shadow: 0 1px whitesmoke;
 }
 
-.login h2 {
+.register h2 {
   margin: -20px 0px 0px 0px;
   line-height: 40px;
   font-size: 12px;
@@ -58,52 +58,52 @@ body {
   text-align: center;
   text-shadow: 0 1px white;
 }
-.login p {
+.register p {
   margin: 20px 0 0;
 }
-.login p:first-child {
+.register p:first-child {
   margin-top: 0;
 }
-.login input[type=text], .login input[type=password] {
+.register input[type=text], .register input[type=password] {
   width: 278px;
 }
-.login p.remember_me {
+.register p.remember_me {
   float: left;
   line-height: 31px;
 }
-.login p.remember_me label {
+.register p.remember_me label {
   font-size: 12px;
   color: #777;
   cursor: pointer;
 }
-.login p.remember_me input {
+.register p.remember_me input {
   position: relative;
   bottom: 1px;
   margin-right: 4px;
   vertical-align: middle;
 }
-.login p.submit {
-  text-align: right;
+.register p.submit {
+  text-align: center;
 }
 
-.login p.error {
+.register p.error {
   margin: -5px 0px -15px 0px;
   color: #eb0000;
   text-align: center;
 }
 
-.login-help, .register-option {
+.register-help, .register-option {
   margin: 20px 0;
   font-size: 11px;
   color: white;
   text-align: center;
   text-shadow: 0 1px #2a85a1;
 }
-.login-help a, .register-option a {
+.register-help a, .register-option a {
   color: #cce7fa;
   text-decoration: none;
 }
-.login-help a:hover, .register-option a:hover {
+.register-help a:hover, .register-option a:hover {
   text-decoration: underline;
 }
 
@@ -122,7 +122,7 @@ input {
   font-size: 14px;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   margin: 5px;
   padding: 0 10px;
   width: 200px;
@@ -137,7 +137,7 @@ input[type=text], input[type=password] {
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
 }
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
   border-color: #7dc9e2;
   outline-color: #dceefc;
   outline-offset: 0;
@@ -172,12 +172,12 @@ input[type=submit]:active {
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
+.lt-ie9 input[type=text], .lt-ie9 input[type=password], .lt-ie9  input[type=email] {
   line-height: 34px;
 }
 
 footer {
-  margin: 190px 0px 0px 0px;
+  margin: 102px 0px 0px 0px;
   font-size: 12px;
   color: white;
   text-shadow: 0 1px #2a85a1;
