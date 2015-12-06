@@ -23,12 +23,12 @@
 	        		<li><a href="home.php">Home</a></li>
 	        		<li><a href="showcalendar.php">Calendar</a></li>
 	        		<li>
-	      				<a>Events<span class="caret"></span></a>
+	      				Events<span class="caret"></span>
 	            		<div>
 	                		<ul>
 	                			<li><a href="events.php">All events</a></li>
-				                <li><a href="events.php#myevents">My events</a></li>
-				                <li><a href="events.php#eventsimin">Events I'm in</a></li>
+				                <li><a href="myevents.php">My events</a></li>
+				                <li><a href="eventsimin.php">Events I'm in</a></li>
 				                <li><a href="createevent.php">Create an event</a></li>
 				            </ul>
 	           			</div>

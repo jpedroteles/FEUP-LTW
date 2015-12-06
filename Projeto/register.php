@@ -3,6 +3,9 @@ session_start();
 if(!isset($_SESSION['fillBlanks'])){
 	$_SESSION['fillBlanks'] = 0;
 }
+if(!isset($_SESSION['invaliduser'])){
+	$_SESSION['invaliduser'] = 0;
+}
 ?>
 
 <html>
@@ -26,12 +29,12 @@ if(!isset($_SESSION['fillBlanks'])){
 					    if($_SESSION['fillBlanks'] == 1){
 							echo '<p class="error">Fill all the blanks</p>';
 					    	$_SESSION['fillBlanks'] = 0;
-								$_SESSION['fillBlanks'] = 0;
+								$_SESSION['invaliduser'] = 0;
 					    }
 							else {
 								if($_SESSION['invaliduser'] == 1){
 								echo '<p class="error">Username already taken</p>';
-						    	$_SESSION['fillBlanks'] = 0;
+						    	$_SESSION['invaliduser'] = 0;
 						    }
 							}
 				  	?>

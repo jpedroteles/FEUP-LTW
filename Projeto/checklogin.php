@@ -15,7 +15,7 @@ $result=$db->query($sql);
 // If result matched $myusername and $mypassword, table row must be 1 row
 if($result = $result->fetch(PDO::FETCH_ASSOC)){
   $user_pass = $result['password'];
-  $teste = crypt($mypassword, $user_pass );
+  $teste = crypt($mypassword, $user_pass);
   if ($user_pass == $teste) {
     $sql="SELECT id FROM User WHERE name='$myusername'";
     $result=$db->query($sql);
