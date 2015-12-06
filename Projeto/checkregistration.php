@@ -37,7 +37,7 @@ if($mypassword1 == $mypassword2)
 	$result = $db->query($sql2);
 	$data = $result->fetch(PDO::FETCH_ASSOC);
 	$id = $data['total'] + 1;
-	$hash = crypt("123");
+	$hash = crypt("$mypassword");
 
 	$sql = "INSERT INTO User (id,name,mail,mailValidation,password)
 	VALUES('$id','$myusername','$mymail','FALSE','$hash')";

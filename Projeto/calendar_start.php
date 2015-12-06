@@ -50,7 +50,7 @@ echo '<div id = "calendar_wrap">';
     $data = $num_rows->fetch(PDO::FETCH_ASSOC);
 
     if($data[numRows] > 0) {
-      $event = "<input name='$date' type='submit' value='Details' id='$date' onClick='javascript:show_details(this);'>";
+      $event = "<input name='$date' type='submit' value='Events' id='$date' onClick='javascript:show_details(this);'>";
     }
 
     if($i==$currentday && $showmonth ==$currentmonth && $showyear == $currentyear)
