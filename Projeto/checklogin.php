@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $db = new PDO('sqlite:sql.db');
 
 // username and password sent from form
@@ -16,10 +16,12 @@ $result=$db->query($sql);
 if($result->fetch(PDO::FETCH_NUM > 0)){
 
 // Register $myusername, $mypassword and redirect to file "login_success.php"
+$sql="SELECT id FROM User WHERE name='$myusername' and password='$mypassword'";
+$result=$db->query($sql);
+$_SESSION['user'] = $result->fetch(PDO::FETCH_NUM)[0];
 header("location:login_success.php");
 }
 else {
-session_start();
 $_SESSION['loginerror'] = 1;
 die(header("location:html.php"));
 

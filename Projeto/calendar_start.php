@@ -3,7 +3,10 @@ $db = new PDO('sqlite:sql.db');
 
 $show_month = $_POST['showmonth'];
 $show_year = $_POST['showyear'];
-$show_day = $_POST['showday'];
+$currentday = $_POST['currentday'];
+$currentmonth = $_POST['currentmonth'];
+$currentyear = $_POST['currentyear'];
+
 $showmonth = preg_replace('#[^0-9]#i', '', $show_month);
 $showyear = preg_replace('#[^0-9]#i', '', $show_year);
 
@@ -50,7 +53,7 @@ echo '<div id = "calendar_wrap">';
       $event = "<input name='$date' type='submit' value='Details' id='$date' onClick='javascript:show_details(this);'>";
     }
 
-    if($i==$show_day)
+    if($i==$currentday && $showmonth ==$currentmonth && $showyear == $currentyear)
     {
       echo '<div class = "present_day"</div>';
     }

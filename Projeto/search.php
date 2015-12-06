@@ -11,7 +11,7 @@ else {
   $i;
   $idlist;
   $sameid = "FALSE";
-  $query1 = $db->query("SELECT * FROM Event WHERE name || startDate || startTime || local || decription || type || creator LIKE '%$search%'");
+  $query1 = $db->query("SELECT * FROM Event WHERE name || startDate || startTime || local || description || type || creator LIKE '%$search%'");
   while($row = $query1->fetch(PDO::FETCH_ASSOC))
   {
     $name = $row[name];
@@ -34,7 +34,7 @@ else {
 
   for($i = 0; $i < sizeof($search_exploded);$i++)
   {
-    $query2 = $db->query("SELECT * FROM Event WHERE name || startDate || startTime || local || decription || type || creator LIKE '%$search_exploded[$i]%'");
+    $query2 = $db->query("SELECT * FROM Event WHERE name || startDate || startTime || local || description || type || creator LIKE '%$search_exploded[$i]%'");
     while($row = $query2->fetch(PDO::FETCH_ASSOC))
     {
       $name = $row[name];

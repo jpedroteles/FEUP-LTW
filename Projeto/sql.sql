@@ -28,7 +28,7 @@ create table Event(
 	local TEXT NOT NULL,
 	description TEXT NOT NULL,
 	private BOOLEAN NOT NULL,
-	photo BLOB, /*used on media files ver alternativas*/
+	photo TEXT NOT NULL, 
 	type INT REFERENCES Tipo(id),
 	creator INT REFERENCES User(id)
 );

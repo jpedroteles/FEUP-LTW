@@ -6,6 +6,9 @@
   var showmonth;
   var showyear;
   var showday;
+  var currentday;
+  var currentmonth;
+  var currentyear;
   function initialCalendar() {
     var hr = new XMLHttpRequest();
     var url = "calendar_start.php";
@@ -13,10 +16,13 @@
     var month = currentTime.getMonth() + 1;
     var year = currentTime.getFullYear();
     var day = currentTime.getUTCDate();
-    showday = day;
+    showday = currentTime;
     showmonth = month;
     showyear = year;
-    var vars = "showmonth="+showmonth+"&showyear="+showyear+"&showday="+showday;
+    currentday = day;
+    currentmonth = month;
+    currentyear = year;
+    var vars = "showmonth="+showmonth+"&showyear="+showyear+"&currentday="+currentday+"&currentmonth="+currentmonth+"&currentyear="+currentyear;
     hr.open("POST", url, true);
     hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     hr.onreadystatechange = function() {
@@ -39,7 +45,7 @@
     showmonth = nextmonth;
     var hr = new XMLHttpRequest();
     var url = "calendar_start.php";
-    var vars = "showmonth="+showmonth+"&showyear="+showyear+"&showday="+showday;
+    var vars = "showmonth="+showmonth+"&showyear="+showyear+"&currentday="+currentday+"&currentmonth="+currentmonth+"&currentyear="+currentyear;
     hr.open("POST", url, true);
     hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     hr.onreadystatechange = function() {
@@ -62,7 +68,7 @@
     showmonth = lastmonth;
     var hr = new XMLHttpRequest();
     var url = "calendar_start.php";
-    var vars = "showmonth="+showmonth+"&showyear="+showyear+"&showday="+showday;
+    var vars = "showmonth="+showmonth+"&showyear="+showyear+"&currentday="+currentday+"&currentmonth="+currentmonth+"&currentyear="+currentyear;
     hr.open("POST", url, true);
     hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     hr.onreadystatechange = function() {
