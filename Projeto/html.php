@@ -17,7 +17,8 @@ if(!isset($_SESSION['loginerror']))
 	<body>
 		<div class="container">
 	  		<div class="login">
-	   			<h1>Login</h1>
+	   			<h1>Event Manager</h1>
+	   			<h2>Login</h2>
 	    		<form method="post" action="checklogin.php">
 	      			 <p><input type="text" name="myusername" placeholder="Username"></p>
 	     			 <p><input type="password" name="mypassword" placeholder="Password"></p>
