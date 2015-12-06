@@ -1,7 +1,7 @@
 <?php
 
 $db = new PDO('sqlite:sql.db');
-$search = $_GET ['search'];
+$search = $_POST ['search'];
 
 if( strlen( $search ) <= 1 )
   echo "Search term too short";

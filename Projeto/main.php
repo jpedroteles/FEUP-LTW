@@ -33,6 +33,7 @@
 				            </ul>
 	           			</div>
 	        		</li>
+							<li><a href="searchform.php">Search</a></li>
 	    		</ul>
 			</nav>
 
