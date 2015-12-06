@@ -1,9 +1,4 @@
-<?php
-/*
-Neste ficheiro ainda falta:
-					- verificar se já existe um evento com o mesmo nome
-					- obter o creador do evento(fazer $_SESSION['user'] dá ID de user)
-*/
+<?
 session_start();
 $db = new PDO('sqlite:sql.db');
 
@@ -12,6 +7,7 @@ $name = $_POST['name'];
 $date = $_POST['startdate'];
 $time = $_POST['starttime'];
 $local = $_POST['local'];
+$id = $_POST['eventid'];
 $description = $_POST['description'];
 $private = $_POST['private'];
 $pic = $_FILES["fileToUpload"]["name"];
@@ -31,17 +27,12 @@ if("" == trim($name) || "" == trim($date) || "" == trim($time) || "" == trim($de
 	die(header("location:createevent.php"));
 }
 
-$sql2 = "SELECT Count(*) as total FROM Event";
-$result = $db->query($sql2);
-$data = $result->fetch(PDO::FETCH_ASSOC);
-$id = $data['total'] + 1;
-
-$sql = "INSERT INTO Event (id, name, startDate, startTime, local, description, private, photo, type, creator)
-VALUES('$id','$name','$date','$time','$local', '$description', '$private','$pic','1', $creator)";
+$sql = "UPDATE Event SET name='$name', startDate='$time', startTime='$time', local='$local', description='$description', private='$private', photo='$pic', type='1', creator='$creator'
+WHERE id='$id'";
 
 if($db->query($sql) == TRUE){
-	echo '<p>New event created successfully</p>';
-	//upload image
+	echo '<p>Event edited successfully</p>';
+	//upload image"
 	$target_dir = "uploads/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
