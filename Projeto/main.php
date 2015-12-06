@@ -11,34 +11,34 @@
 	<head>
 		<title>Event Manager</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="maincss.css">
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
 	</head>
 	<body>
-		<header>
+		<div class="container">
 			<h1>Event Manager</h1>
-		</header>
-		<nav>
-			<ul>
-        		<li><a href="home.php">Home</a></li>
-        		<li><a href="showcalendar.php">Calendar</a></li>
-        		<li>
-      				<a >Events<span class="caret"></span></a>
-            		<div>
-                		<ul>
-											<li><a href="events.php">All events</a></li>
-			                <li><a href="myevents.php">My events</a></li>
-			                <li><a href="eventsimin.php">Events I'm in</a></li>
-			                <li><a href="createevent.php">Create an event</a></li>
-			            </ul>
-           			</div>
-        		</li>
-    		</ul>
-		</nav>
+			<nav>
+				<ul>
+	        		<li><a href="home.php">Home</a></li>
+	        		<li><a href="showcalendar.php">Calendar</a></li>
+	        		<li>
+	      				<a>Events<span class="caret"></span></a>
+	            		<div>
+	                		<ul>
+	                			<li><a href="events.php">All events</a></li>
+				                <li><a href="events.php#myevents">My events</a></li>
+				                <li><a href="events.php#eventsimin">Events I'm in</a></li>
+				                <li><a href="createevent.php">Create an event</a></li>
+				            </ul>
+	           			</div>
+	        		</li>
+	    		</ul>
+			</nav>
 
-		<div id ="mainwindow">
+			<div id ="mainwindow">
 
+			</div>
 		</div>
 
 		<footer>

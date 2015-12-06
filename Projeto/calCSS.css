@@ -48,7 +48,7 @@
   margin-bottom: 4px;
   width: 128px;
   height: 95px;
-  background-color: #999999;
+  background-color: #33ff81;
 }
 
 .present_day {
@@ -57,7 +57,7 @@
   margin-bottom: 4px;
   width: 128px;
   height: 95px;
-  background-color: #e0e0e0;
+  background-color: #b8f5ff;
 }
 
 .day_heading {
@@ -123,15 +123,13 @@ body {
 
 #events {
   display: none;
-  width: 500px;
+  width: 700px;
   border: 4px solid #9C9;
   padding: 15px;
   z-index: 3000;
-  margin-top: 100px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 50px auto 0px auto;
   background-color: #FFF;
-  height: 400px;
+  height: 500px;
   overflow: scroll;
 }
 
@@ -146,4 +144,36 @@ body {
   display: none;
   width: 100%;
   z-index: 3000;
+}
+
+#eventBody a {
+  margin-bottom: 10px;
+}
+
+#close { 
+    position: fixed;
+    top: 90px;
+    right: 60px;
+    width: 80px;
+    height: 50px;
+    background-color: #8a8a8a;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius:10px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    font-size: 22px;
+}
+
+#close:hover {
+    border: none;
+    background: #ccc;
+    box-shadow: 0px 0px 1px #777;
+}
+
+img{
+    width: 200px;
+    height: auto;
 }
