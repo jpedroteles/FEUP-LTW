@@ -48,7 +48,7 @@
   margin-bottom: 4px;
   width: 128px;
   height: 95px;
-  background-color: #9C9;
+  background-color: #999999;
 }
 
 .present_day {
@@ -57,7 +57,7 @@
   margin-bottom: 4px;
   width: 128px;
   height: 95px;
-  background-color: #26C000;
+  background-color: #e0e0e0;
 }
 
 .day_heading {
@@ -84,7 +84,7 @@
   margin-bottom: 4px;
   width: 128px;
   height: 95px;
-  background-color: #CCC;
+  background-color: #4d4d4d;
 }
 
 .clear {
