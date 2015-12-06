@@ -15,7 +15,7 @@ if($data[numRows] > 0) {
     $desc = $row[description];
     $name = $row[name];
     $image = $row[photo];
-    $events .= '<div id = "eventsBody"><a id="name">' . $name . '</a><br /><br /><a id="desc">'. $desc . ' <br /><br /><img src="uploads/' .$row[photo]. '" <br /><br /><hr><br /></div>';
+    $events .= '<div id = "eventsBody"><a id="name">' . $name . '</a><br /><br /><a id="desc">'. $desc . ' <br /><br /><img src="uploads/' .$row[photo]. '>" <br /><br /><hr><br /></div>';
   }
 }
 echo $events;
