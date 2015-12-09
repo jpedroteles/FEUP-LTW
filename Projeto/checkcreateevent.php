@@ -15,8 +15,13 @@ $local = $_POST['local'];
 $description = $_POST['description'];
 $private = $_POST['private'];
 $pic = $_FILES["fileToUpload"]["name"];
-if(sizeof($_SESSION['user']) > 0)
+if(sizeof($_SESSION['user']) > 0) {
 	$creator = $_SESSION['user'];
+	$sql = "SELECT * FROM User WHERE id = '$creator'";
+	$result=$db->query($sql);
+	$result=$result->fetch(PDO::FETCH_ASSOC);
+	$creator = $result['name'];
+}
 else {
 	echo 'Login expired. Please login again.';
   echo'<meta http-equiv="refresh" content="1; URL=html.php">';
@@ -28,7 +33,8 @@ if("" == trim($name) || "" == trim($date) || "" == trim($time) || "" == trim($de
 	echo 'Fill all the blanks.';
 	session_start();
 	$_SESSION['fillBlanks'] = 1;
-	die(header("location:createevent.php"));
+	echo'<meta http-equiv="refresh" content="1; URL=main.php">';
+	die();
 }
 
 $sql2 = "SELECT Count(*) as total FROM Event";
@@ -37,7 +43,7 @@ $data = $result->fetch(PDO::FETCH_ASSOC);
 $id = $data['total'] + 1;
 
 $sql = "INSERT INTO Event (id, name, startDate, startTime, local, description, private, photo, type, creator)
-VALUES('$id','$name','$date','$time','$local', '$description', '$private','$pic','1', $creator)";
+VALUES('$id','$name','$date','$time','$local', '$description', '$private','$pic','1', '$creator')";
 
 if($db->query($sql) == TRUE){
 	echo '<p>New event created successfully</p>';
@@ -66,15 +72,21 @@ if($db->query($sql) == TRUE){
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
 	    echo "<p>Sorry, your file was not uploaded.</p>";
+			echo '<meta http-equiv="refresh" content="1; URL=main.php">';
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 	        echo "<p>The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.</p>";
+					echo '<meta http-equiv="refresh" content="1; URL=main.php">';
 	    } else {
 	        echo "<p>Sorry, there was an error uploading your file.</p>";
+					echo '<meta http-equiv="refresh" content="1; URL=main.php">';
 	    }
 	}
 }
-else
+else {
 	echo '<p>Error creating event</p>';
+	echo'<meta http-equiv="refresh" content="1; URL=main.php">';
+	die();
+}
 ?>

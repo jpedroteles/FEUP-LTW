@@ -6,6 +6,9 @@ if(!isset($_SESSION['fillBlanks'])){
 if(!isset($_SESSION['invaliduser'])){
 	$_SESSION['invaliduser'] = 0;
 }
+if(!isset($_SESSION['invalidpassword'])){
+	$_SESSION['invalidpassword'] = 0;
+}
 ?>
 
 <html>
@@ -30,13 +33,21 @@ if(!isset($_SESSION['invaliduser'])){
 							echo '<p class="error">Fill all the blanks</p>';
 					    	$_SESSION['fillBlanks'] = 0;
 								$_SESSION['invaliduser'] = 0;
+								$_SESSION['invalidpassword'] = 0;
 					    }
-							else {
+							else
 								if($_SESSION['invaliduser'] == 1){
 								echo '<p class="error">Username already taken</p>';
 						    	$_SESSION['invaliduser'] = 0;
+									$_SESSION['invalidpassword'] = 0;
 						    }
-							}
+
+							else
+								if($_SESSION['invalidpassword'] == 1){
+								echo '<p class="error">Passwords do not match</p>';
+									$_SESSION['invalidpassword'] = 0;
+						    }
+
 				  	?>
 					<p class="submit"><input type="submit" value="Register"></p>
 				</form>

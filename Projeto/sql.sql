@@ -28,9 +28,9 @@ create table Event(
 	local TEXT NOT NULL,
 	description TEXT NOT NULL,
 	private BOOLEAN NOT NULL,
-	photo TEXT NOT NULL, 
+	photo TEXT NOT NULL,
 	type INT REFERENCES Tipo(id),
-	creator INT REFERENCES User(id)
+	creator INT REFERENCES User(name)
 );
 
 create table Type(
@@ -49,17 +49,10 @@ create table Guests(
 	event INT REFERENCES Event(id)
 );
 
-/* Optional tables */
-
-create table Forum(
+create table comment(
 	id INT NOT NULL PRIMARY KEY,
-	name TEXT NOT NULL
-);
-
-create table coment(
-	id INT NOT NULL PRIMARY KEY,
- 	comentDate DATE NOT NULL,
- 	coment TEXT NOT NULL,
+ 	commentDate DATE NOT NULL,
+ 	comment TEXT NOT NULL,
  	user INT REFERENCES User(id),
- 	forum INT REFERENCES Forum(id)
+ 	event INT REFERENCES Event(id)
 );

@@ -3,13 +3,24 @@ h3 {
 }
 
 .eventos {
-    width: 400px; 
+    width: 400px;
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: auto;
-  margin-left: auto;  
+  margin-left: auto;
   background: #e1e1e1;
   border: 5px solid #ccc;
-  text-align:center; 
+  text-align:center;
+}
+
+img {
+    width:  300px;     height: 300px;
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
 }

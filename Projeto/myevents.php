@@ -2,8 +2,13 @@
 
 session_start();
 $db = new PDO('sqlite:sql.db');
-if(sizeof($_SESSION['user']) > 0)
+if(sizeof($_SESSION['user']) > 0) {
 	$user = $_SESSION['user'];
+	$sql = "SELECT * FROM User WHERE id = '$user'";
+	$result=$db->query($sql);
+	$result=$result->fetch(PDO::FETCH_ASSOC);
+	$user = $result['name'];
+}
 else {
 	echo 'Login expired. Please login again.';
   echo'<meta http-equiv="refresh" content="1; URL=html.php">';

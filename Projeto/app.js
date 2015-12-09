@@ -44,9 +44,26 @@ jQuery(document).ready(function($) {
    hr.onreadystatechange = function() {
      if(hr.readyState == 4 && hr.status == 200) {
        var return_data = hr.responseText;
-       document.getElementById("events").innerHTML = return_data;
+       document.getElementById("mainwindow").innerHTML = return_data;
      }
    }
    hr.send(vars);
-   document.getElementById("events").innerHTML = "processing...";
+   document.getElementById("mainwindow").innerHTML = "processing...";
+ }
+
+ function seeevent(eventid)
+ {
+   var hr = new XMLHttpRequest();
+   var url = "seeevent.php";
+   var vars = "eventid="+eventid;
+   hr.open("POST", url, true);
+   hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   hr.onreadystatechange = function() {
+     if(hr.readyState == 4 && hr.status == 200) {
+       var return_data = hr.responseText;
+       document.getElementById("mainwindow").innerHTML = return_data;
+     }
+   }
+   hr.send(vars);
+   document.getElementById("mainwindow").innerHTML = "processing...";
  }

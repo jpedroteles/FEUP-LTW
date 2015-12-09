@@ -58,7 +58,9 @@ if($mypassword1 == $mypassword2)
 }
 else
 {
-	echo 'Passwords don\t match';
+	session_start();
+	$_SESSION['invalidpassword'] = 1;
+	die(header("location:register.php"));
 }
 
 ?>

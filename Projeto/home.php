@@ -3,7 +3,15 @@
 
   	$stmt = $db->prepare('SELECT * FROM Event WHERE ID = (SELECT MAX(ID)  FROM Event);');
   	$stmt->execute();
-  	$result = $stmt->fetchAll();
+  	$result1 = $stmt->fetchAll();
+
+		$stmt = $db->prepare('SELECT * FROM Event WHERE ID = (SELECT MAX(ID-1)  FROM Event);');
+  	$stmt->execute();
+  	$result2 = $stmt->fetchAll();
+
+		$stmt = $db->prepare('SELECT * FROM Event WHERE ID = (SELECT MAX(ID-2)  FROM Event);');
+  	$stmt->execute();
+  	$result3 = $stmt->fetchAll();
 ?>
 
 <html>
@@ -14,8 +22,24 @@
 	<body>
 
 		<div id ="events">
-			<h2>Últimos eventos</h2>
-			<?  foreach( $result as $row) {?>
+			<h2>Last Events Created</h2>
+			<?  foreach( $result1 as $row) {?>
+      			<div class="ultimoseventos">
+					<a  href=# onclick="javascript:registerinevent(<?php echo $row['id'] ?>);">
+        				<h3><?=$row['name']?></h3>
+					</a>
+        			<p><?=$row['startDate']?></p>
+      			</div>
+			<? } ?>
+			<?  foreach( $result2 as $row) {?>
+      			<div class="ultimoseventos">
+					<a  href=# onclick="javascript:registerinevent(<?php echo $row['id'] ?>);">
+        				<h3><?=$row['name']?></h3>
+					</a>
+        			<p><?=$row['startDate']?></p>
+      			</div>
+			<? } ?>
+			<?  foreach( $result3 as $row) {?>
       			<div class="ultimoseventos">
 					<a  href=# onclick="javascript:registerinevent(<?php echo $row['id'] ?>);">
         				<h3><?=$row['name']?></h3>

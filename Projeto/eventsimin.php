@@ -19,7 +19,7 @@ $eventsimin = $stmt->fetchAll();
 <meta charset="UTF-8">
 <link rel="stylesheet" href="event.css">
 <body>
-  <div id = "eventsimin">
+  <div id = "events">
     <h2>Events I am in</h2>
     <?
       if(sizeof($eventsimin) > 0)
@@ -33,7 +33,7 @@ $eventsimin = $stmt->fetchAll();
           ?>
 
           <div class="eventos">
-            <a  href=# onclick="javascript:registerinevent(<?php echo $row['id'] ?>);">
+            <a  href=# onclick="javascript:seeevent(<?php echo $row['id'] ?>);">
             <h3><?=$row['name']?></h3>
             </a>
             <p><?=$row['startDate']?></p>

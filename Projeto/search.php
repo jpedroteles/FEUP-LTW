@@ -1,7 +1,25 @@
+<script type="text/javascript">
+function clicksearchresult(eventid)
+{
+  var hr = new XMLHttpRequest();
+  var url = "clicksearchresult.php";
+  var vars = "eventid="+eventid;
+  hr.open("POST", url, true);
+  hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  hr.onreadystatechange = function() {
+    if(hr.readyState == 4 && hr.status == 200) {
+      var return_data = hr.responseText;
+      document.getElementById("searchresult").innerHTML = return_data;
+    }
+  }
+  hr.send(vars);
+}
+</script>
 <?php
-
+session_start();
 $db = new PDO('sqlite:sql.db');
 $search = $_POST ['search'];
+
 
 if( strlen( $search ) <= 1 )
   echo "Search term too short";
@@ -24,7 +42,9 @@ else {
       }
     }
     if($sameid != "TRUE") {
-      echo '<div id = searchresult>'. $name . '</br> <hr>';
+      echo '<a href=# onclick="clicksearchresult('.$row[id].')">';
+      echo '<div id = searchresult>'.$name . '</br> <hr>';
+      echo '</a>';
       $idlist .= $row[id];
     }
     else {
